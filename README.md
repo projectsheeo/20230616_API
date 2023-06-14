@@ -31,7 +31,7 @@ BingMap準備
 1. Keyを取得 https://www.bingmapsportal.com/Account <br>
 2. HTMLファイルのHeadタグ内に次のURLを貼り付け <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[*** your key info***]' async defer></script> 
 3. HTMLファイルのBodyタグ内の一番下でHTMLとJSファイルを紐付け
-4. HTMLファイルのBodyタグ内にマップを入れる要素を準備 <div id="map"><div>等
+<!-- 4. HTMLファイルのBodyタグ内にマップを入れる要素を準備 <div id="map"><div>等 -->
 5. JSファイルに以下の関数（マップを表示するための関数）を記載<br>
     function GetMap() { <br>
     const map = new Microsoft.Maps.Map('#myMap', { <br>
