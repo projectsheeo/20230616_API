@@ -26,14 +26,19 @@
 
 # まとめ
 
-<!-- BingMap 操作手順 -->
+BingMap 操作手順
 
-<!-- ① Keyを取得 https://www.bingmapsportal.com/Account -->
+① Keyを取得 https://www.bingmapsportal.com/Account
  <br>
-② HTMLファイルとJavaScriptファイルを連携 （headタグ内）<br>
-③ HTMLファイルとBingMap APIを連携（次のリンクをHeadタグ内に格納）<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[*** your key info***]' async defer></script> <br>
-④ HTMLにマップを入れる要素を準備（<div id="myMap"></div>、等）<br>
-⑤ JSファイルに以下のメソッドを準備
+② HTMLファイルとJavaScriptファイルを連携 （headタグ内）
+<br>
+③ HTMLファイルとBingMap APIを連携（次のリンクをHeadタグ内に格納）
+<br>
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[*** your key info***]' async defer></script> 
+<br>
+④ HTMLにマップを入れる要素を準備（<div id="myMap"></div>、等）
+<br>
+⑤ JSファイルに以下のメソッドを準備<br>
     function GetMap() { <br>
     const map = new Microsoft.Maps.Map('#myMap', { <br>
         center: new Microsoft.Maps.Location(35.316467, 139.546537), //マップに表示する場所の指定（括弧内は、緯度,経度）<br>
