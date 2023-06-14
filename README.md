@@ -32,11 +32,10 @@ BingMap 操作手順
  <br>
 ② HTMLファイルとJavaScriptファイルを連携 （headタグ内）
 <br>
-③ HTMLファイルとBingMap APIを連携（次のリンクをHeadタグ内に格納）
-<br>
+③ HTMLファイルとBingMap APIを連携（次のリンクをHeadタグ内に格納）<br>
 <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[*** your key info***]' async defer></script> 
 <br>
-④ HTMLにマップを入れる要素を準備（<div id="myMap"></div>、等）
+④ HTMLにマップを入れる要素を準備（//<div id="myMap"></div>、等）
 <br>
 ⑤ JSファイルに以下のメソッドを準備<br>
     function GetMap() { <br>
