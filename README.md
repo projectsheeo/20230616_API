@@ -28,7 +28,7 @@
 
 BingMap 操作手順
 
-① Keyを取得 https://www.bingmapsportal.com/Account
+① Keyを取得 https://www.bingmapsportal.com/Account <br>
 ② HTMLファイルとJavaScriptファイルを連携 （headタグ内）
 ③ HTMLファイルとBingMap APIを連携（次のリンクをHeadタグ内に格納）<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[*** your key info***]' async defer></script>
 ④ HTMLにマップを入れる要素を準備（<div id="myMap"></div>、等）
