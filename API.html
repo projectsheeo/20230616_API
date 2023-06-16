@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="API.css" />
+
+  </head>
+
+  <body>
+
+    <h1>マップ選択
+        <select id="type">
+            <option value="load" selected>load</option>
+            <option value="aerial">aerial</option>
+            <option value="canvasDark">canvasDark</option>
+            <option value="canvasLight">canvasLight</option>
+            <option value="birdseye">birdseye</option>
+            <option value="grayscale">grayscale</option>
+            <option value="streetside">streetside</option>
+        </select>
+    </h1>
+
+    <div id="map" class="map"></div>
+
+    <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=' async defer></script>
+    <script>
+        function GetMap() {
+            const map = new Microsoft.Maps.Map('#map', {
+                center: new Microsoft.Maps.Location(35.316114, 139.548144), 
+                mapTypeId: Microsoft.Maps.MapTypeId.load, // [load, aerial,canvasDark,canvasLight,birdseye,grayscale,streetside]
+                zoom: 8  
+            });
+        }
+
+        document.querySelector('#type').onchange = function(){
+        typeid = this.value; 
+        if(typeid == "load") type = {mapTypeId: Microsoft.Maps.MapTypeId.load};
+        if(typeid == "aerial") type = {mapTypeId: Microsoft.Maps.MapTypeId.aerial};
+        if(typeid == "canvasDark") type = {mapTypeId: Microsoft.Maps.MapTypeId.canvasDark};
+        if(typeid == "canvasLight") type = {mapTypeId: Microsoft.Maps.MapTypeId.canvasLight};
+        if(typeid == "birdseye") type = {mapTypeId: Microsoft.Maps.MapTypeId.birdseye};
+        if(typeid == "grayscale") type = {mapTypeId: Microsoft.Maps.MapTypeId.grayscale};
+        if(typeid == "streetside") type = {mapTypeId: Microsoft.Maps.MapTypeId.streetside};
+        map.setView(type);
+    }
+
+    </script>
+
+    <!-- どうしてもCORS制約が解決できなかったのでボツになったもの -->
+
+    <!-- <h1>侮辱されたい？</h1>
+    <button id="insultBtn">ここを押してごらん</button>
+    <div id="insultText"></div>
+
+    <script>
+        const insultBtn = document.querySelector("#insultBtn");
+        const insultText = document.querySelector("#insultText");
+  
+        insultBtn.onclick = function () {
+          fetch('https://evilinsult.com/generate_insult.php?lang=en&type=json')
+            .then((response) => response.jsonp())
+            .then((data) => {
+              insultText.textContent = data.insult;
+            })
+            .catch((error) => console.error(error));
+        };
+      </script> -->
+  </body>
+</html>
